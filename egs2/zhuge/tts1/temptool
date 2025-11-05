@@ -1,0 +1,39 @@
+import os
+
+root = "/Users/xiaobao/AIdev/vits/espnet/egs2/zhuge/tts1/data"
+train_dir = os.path.join(root, "tr_no_dev")
+os.makedirs(train_dir, exist_ok=True)
+
+wav_dir = os.path.join(root, "wavs")  # 你的音频目录
+text_path = os.path.join(root, "train.txt")
+
+wavscp_path = os.path.join(train_dir, "wav.scp")
+text_out_path = os.path.join(train_dir, "train")
+utt2spk_path = os.path.join(train_dir, "utt2spk")
+spk2utt_path = os.path.join(train_dir, "spk2utt")
+
+with open(text_path, "r") as f:
+    lines = [l.strip() for l in f.readlines() if l.strip()]
+
+with open(wavscp_path, "w") as wavscp, \
+     open(text_out_path, "w") as textout, \
+     open(utt2spk_path, "w") as utt2spk:
+
+    for line in lines:
+        utt, content = line.split(maxsplit=1)
+        wav_path = os.path.join(wav_dir, f"{utt}.wav")
+        wavscp.write(f"{utt} {wav_path}\n")
+        textout.write(f"{utt} {content}\n")
+        utt2spk.write(f"{utt} zhuge\n")
+
+# 生成 spk2utt
+from collections import defaultdict
+spk_map = defaultdict(list)
+with open(utt2spk_path, "r") as f:
+    for l in f:
+        utt, spk = l.strip().split()
+        spk_map[spk].append(utt)
+with open(spk2utt_path, "w") as f:
+    for spk, utts in spk_map.items():
+        f.write(f"{spk} {' '.join(utts)}\n")
+
