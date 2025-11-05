@@ -52,7 +52,7 @@ egs*/*/*/data*
 egs*/*/*/manifest*
 egs*/*/*/db
 egs*/*/*/downloads
-egs*/*/*/dump
+#egs*/*/*/dump
 egs*/*/*/enhan
 egs*/*/*/exp
 egs*/*/*/fbank
