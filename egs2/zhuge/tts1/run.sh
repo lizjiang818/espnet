@@ -27,7 +27,7 @@ test_sets="val test"
 # -----------------------------
 # 配置文件
 # -----------------------------
-train_config=conf/tuning/train_vits_small.yaml
+train_config=conf/tuning/train_vits_chinese.yaml
 inference_config=conf/decode.yaml
 
 # -----------------------------

@@ -1,0 +1,33 @@
+# Configuration for VITS Chinese task (simplified)
+tts: vits
+tts_conf:
+  generator_type: vits_generator
+  generator_params:
+    hidden_channels: 192
+    spks: -1
+    global_channels: -1
+    # ... other generator params as needed
+
+# Training settings
+batch_type: numel
+batch_bins: 40000000
+accum_grad: 1
+grad_clip: 1.0
+# Optimizer
+optim: adam
+optim_conf:
+  lr: 0.0002
+  betas: [0.8, 0.99]
+  eps: 1e-9
+# Learning rate scheduler
+lr_schedule: none
+# Data settings
+feats_extract: raw
+feats_extract_conf:
+  fs: 22050
+  n_fft: 1024
+  hop_length: 256
+  win_length: null
+  fmin: 0.0
+  fmax: null
+  n_mels: 80
