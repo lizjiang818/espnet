@@ -18,9 +18,9 @@ optim: adam
 optim_conf:
   lr: 0.0002
   betas: [0.8, 0.99]
-  eps: 1e-9
+  eps: 0.000000001
 # Learning rate scheduler
-lr_schedule: none
+scheduler: warmuplr
 # Data settings
 feats_extract: raw
 feats_extract_conf:
