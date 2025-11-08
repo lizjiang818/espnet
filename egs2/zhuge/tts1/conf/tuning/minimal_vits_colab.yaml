@@ -1,0 +1,21 @@
+use_preprocessor: true
+model: vits
+model_conf:
+  idim: null
+  odim: 80
+  adim: 64
+  aconv_chans: 64
+  aconv_filts: 3
+batch_type: folded
+batch_bins: 500
+max_epoch: 3
+num_iters_per_epoch: 3
+optim: adam
+optim_conf:
+  lr: 0.0001
+keep_nbest_models: 1
+best_model_criterion:
+  - - train
+    - loss
+    - min
+num_workers: 1
