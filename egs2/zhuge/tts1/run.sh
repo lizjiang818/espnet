@@ -35,7 +35,7 @@ inference_config=conf/decode.yaml
 # -----------------------------
 lang=zh
 token_type=phn          # 使用音素（phn），也可以改为 char
-cleaner=none   # 对中文语料可用 none_cleaners
+cleaner=null   # 对中文语料可用 none_cleaners
 g2p=none                # 中文不需要 grapheme-to-phoneme
 
 # -----------------------------

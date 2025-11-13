@@ -37,3 +37,5 @@ sort_in_batch: descending
 sort_batch: descending
 use_preprocessor: true
 collect_stats: true
+max_epoch: 200
+batch_size: 4
