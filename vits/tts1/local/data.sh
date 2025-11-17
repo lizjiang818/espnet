@@ -60,13 +60,11 @@ if [ ${stage} -le 0 ] && [ ${stop_stage} -ge 0 ]; then
     utt2spk=data/train/utt2spk
     spk2utt=data/train/spk2utt
     text=data/train/text
-    segments=data/train/segments
 
     # check file existence
     [ -e ${scp} ] && rm ${scp}
     [ -e ${utt2spk} ] && rm ${utt2spk}
     [ -e ${text} ] && rm ${text}
-    [ -e ${segments} ] && rm ${segments}
 
     # make scp, utt2spk from wavs directory
     log "Processing wav files from ${db_root}/wavs/"
@@ -114,15 +112,6 @@ if [ ${stage} -le 0 ] && [ ${stop_stage} -ge 0 ]; then
         log "Error: No text data found or text file is empty"
         exit 1
     fi
-
-    # make segments (optional, for TTS we can use full audio)
-    # For TTS, we typically use the full audio, so start=0 and end=-1.0
-    # This will be handled automatically by ESPnet if segments file is not provided
-    # But we create it here for completeness
-    find ${db_root}/wavs -name "*.wav" -follow | sort | while read -r filename; do
-        id="$(basename ${filename} .wav)"
-        echo "${id} ${id} 0.0 -1.0" >> ${segments}
-    done
 
     log "Created data files:"
     log "  wav.scp: $(wc -l < ${scp}) entries"
