@@ -1,4 +1,6 @@
-MAIN_ROOT=$PWD/../../..
+# For vits/tts1 structure: /content/espnet/vits/tts1 -> /content/espnet
+# Standard egs2 structure would be: $PWD/../../..
+MAIN_ROOT=$PWD/../..
 
 export PATH=$PWD/utils/:$PATH
 export LC_ALL=C
