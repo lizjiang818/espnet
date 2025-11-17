@@ -27,7 +27,7 @@ fi
 
 if [ -z "${CUSTOM_CHINESE_TTS}" ]; then
    log "Fill the value of 'CUSTOM_CHINESE_TTS' of db.sh"
-   log "Example: CUSTOM_CHINESE_TTS=/Users/xiaobao/AIdev/content/espnet/dataset"
+   log "Example: CUSTOM_CHINESE_TTS=/content/espnet/dataset"
    exit 1
 fi
 db_root=${CUSTOM_CHINESE_TTS}
