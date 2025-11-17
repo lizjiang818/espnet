@@ -1,0 +1,10 @@
+# pyscripts/audio/format_wav_scp.py --fs 22050 --audio-format wav --multi-columns-input false --multi-columns-output false dump/raw/org/dev/logs/wav.1.scp dump/raw/org/dev/data/format.1 
+# Started at Mon Nov 17 08:58:17 UTC 2025
+#
+2025-11-17 08:58:18,408 (format_wav_scp:151) INFO: /usr/bin/python3 pyscripts/audio/format_wav_scp.py --fs 22050 --audio-format wav --multi-columns-input false --multi-columns-output false dump/raw/org/dev/logs/wav.1.scp dump/raw/org/dev/data/format.1
+0it [00:00, ?it/s]
+0it [00:00, ?it/s][A1it [00:01,  1.61s/it]
+1it [00:01,  1.61s/it][A1it [00:01,  1.61s/it]
+1it [00:01,  1.61s/it]
+# Accounting: time=3 threads=1
+# Ended (code 0) at Mon Nov 17 08:58:20 UTC 2025, elapsed time 3 seconds

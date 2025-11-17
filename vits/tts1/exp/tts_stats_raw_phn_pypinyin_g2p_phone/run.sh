@@ -1,0 +1,1 @@
+./tts.sh --lang zh --feats_type raw --fs 24000 --n_fft 2048 --n_shift 300 --win_length 1200 --token_type phn --cleaner none --g2p pypinyin_g2p_phone --train_set tr_no_dev --valid_set dev --test_sets 'dev eval1' --srctexts data/tr_no_dev/text --stage 2 --audio_format wav --stage 6 "$@"; exit $?

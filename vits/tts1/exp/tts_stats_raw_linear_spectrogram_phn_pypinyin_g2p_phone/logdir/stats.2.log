@@ -1,0 +1,39 @@
+# python3 -m espnet2.bin.gan_tts_train --collect_stats true --write_collected_feats false --use_preprocessor true --token_type phn --token_list dump/token_list/phn_pypinyin_g2p_phone/tokens.txt --non_linguistic_symbols none --cleaner none --g2p pypinyin_g2p_phone --normalize none --pitch_normalize none --energy_normalize none --train_data_path_and_name_and_type dump/raw/tr_no_dev/text,text,text --train_data_path_and_name_and_type dump/raw/tr_no_dev/wav.scp,speech,sound --valid_data_path_and_name_and_type dump/raw/dev/text,text,text --valid_data_path_and_name_and_type dump/raw/dev/wav.scp,speech,sound --train_shape_file exp/tts_stats_raw_linear_spectrogram_phn_pypinyin_g2p_phone/logdir/train.2.scp --valid_shape_file exp/tts_stats_raw_linear_spectrogram_phn_pypinyin_g2p_phone/logdir/valid.2.scp --output_dir exp/tts_stats_raw_linear_spectrogram_phn_pypinyin_g2p_phone/logdir/stats.2 --config conf/tuning/train_vits.yaml --feats_extract linear_spectrogram --feats_extract_conf n_fft=2048 --feats_extract_conf hop_length=300 --feats_extract_conf win_length=1200 --pitch_extract_conf fs=22050 --pitch_extract_conf n_fft=2048 --pitch_extract_conf hop_length=300 --pitch_extract_conf f0max=400 --pitch_extract_conf f0min=80 --energy_extract_conf fs=22050 --energy_extract_conf n_fft=2048 --energy_extract_conf hop_length=300 --energy_extract_conf win_length=1200 
+# Started at Mon Nov 17 08:59:00 UTC 2025
+#
+2025-11-17 08:59:12.128789: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1763369952.161476   35082 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1763369952.171648   35082 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1763369952.195687   35082 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1763369952.195712   35082 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1763369952.195716   35082 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1763369952.195720   35082 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2025-11-17 08:59:12.204562: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+/usr/bin/python3 /content/espnet/espnet2/bin/gan_tts_train.py --collect_stats true --write_collected_feats false --use_preprocessor true --token_type phn --token_list dump/token_list/phn_pypinyin_g2p_phone/tokens.txt --non_linguistic_symbols none --cleaner none --g2p pypinyin_g2p_phone --normalize none --pitch_normalize none --energy_normalize none --train_data_path_and_name_and_type dump/raw/tr_no_dev/text,text,text --train_data_path_and_name_and_type dump/raw/tr_no_dev/wav.scp,speech,sound --valid_data_path_and_name_and_type dump/raw/dev/text,text,text --valid_data_path_and_name_and_type dump/raw/dev/wav.scp,speech,sound --train_shape_file exp/tts_stats_raw_linear_spectrogram_phn_pypinyin_g2p_phone/logdir/train.2.scp --valid_shape_file exp/tts_stats_raw_linear_spectrogram_phn_pypinyin_g2p_phone/logdir/valid.2.scp --output_dir exp/tts_stats_raw_linear_spectrogram_phn_pypinyin_g2p_phone/logdir/stats.2 --config conf/tuning/train_vits.yaml --feats_extract linear_spectrogram --feats_extract_conf n_fft=2048 --feats_extract_conf hop_length=300 --feats_extract_conf win_length=1200 --pitch_extract_conf fs=22050 --pitch_extract_conf n_fft=2048 --pitch_extract_conf hop_length=300 --pitch_extract_conf f0max=400 --pitch_extract_conf f0min=80 --energy_extract_conf fs=22050 --energy_extract_conf n_fft=2048 --energy_extract_conf hop_length=300 --energy_extract_conf win_length=1200
+/usr/local/lib/python3.12/dist-packages/torch/nn/utils/weight_norm.py:144: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+/content/espnet/espnet2/gan_tts/vits/monotonic_align/__init__.py:19: UserWarning: Cython version is not available. Fallback to 'EXPERIMETAL' numba version. If you want to use the cython version, please build it as follows: `cd espnet2/gan_tts/vits/monotonic_align; python setup.py build_ext --inplace`
+  warnings.warn(
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/content/espnet/espnet2/bin/gan_tts_train.py", line 22, in <module>
+    main()
+  File "/content/espnet/espnet2/bin/gan_tts_train.py", line 18, in main
+    GANTTSTask.main(cmd=cmd)
+  File "/content/espnet/espnet2/tasks/abs_task.py", line 1281, in main
+    cls.main_worker(args)
+  File "/content/espnet/espnet2/tasks/abs_task.py", line 1414, in main_worker
+    model = cls.build_model(args=args)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/content/espnet/espnet2/tasks/gan_tts.py", line 351, in build_model
+    model = ESPnetGANTTSModel(
+            ^^^^^^^^^^^^^^^^^^
+  File "/content/espnet/espnet2/gan_tts/espnet_model.py", line 64, in __init__
+    feats_extract.get_parameters()["n_shift"] == upsample_factor
+AssertionError: n_shift must be equal to upsample_factor
+Failed to import Flash Attention, using ESPnet default: No module named 'flash_attn'
+# Accounting: time=55 threads=1
+# Ended (code 1) at Mon Nov 17 08:59:55 UTC 2025, elapsed time 55 seconds
