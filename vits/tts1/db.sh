@@ -233,7 +233,7 @@ GALAXY=
 
 # Custom Chinese single speaker dataset
 # 设置为您数据集的绝对路径
-CUSTOM_CHINESE_TTS=/Users/xiaobao/AIdev/content/dataset
+CUSTOM_CHINESE_TTS=/Users/xiaobao/AIdev/content/espnet/dataset
 
 
 # For only CMU TIR environment
